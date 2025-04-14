@@ -2,6 +2,10 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
 
+import { setPersistence, browserLocalPersistence } from "firebase/auth";
+
+setPersistence(auth, browserLocalPersistence);
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
