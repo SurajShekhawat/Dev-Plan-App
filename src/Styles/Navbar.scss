@@ -1,0 +1,145 @@
+// // src/Styles/Navbar.scss
+
+// .dev-navbar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: #ffffff;
+//   padding: 1rem 2rem;
+//   border-bottom: 1px solid #e5e7eb;
+//   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+//   position: sticky;
+//   top: 0;
+//   z-index: 100;
+
+//   .navbar-left {
+//     display: flex;
+//     align-items: center;
+
+//     h3 {
+//       font-size: 1.5rem;
+//       font-weight: 600;
+//       margin-left: 1rem;
+//       color: #4f46e5;
+//     }
+
+//     .menu-icon {
+//       font-size: 1.4rem;
+//       cursor: pointer;
+//       display: none;
+//     }
+//   }
+
+//   .navbar-right {
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+
+//     .welcome-text {
+//       font-size: 1rem;
+//       color: #374151;
+//     }
+
+//     .profile-icon {
+//       font-size: 1.8rem;
+//       color: #4f46e5;
+//       cursor: pointer;
+//     }
+//   }
+
+//   @media screen and (max-width: 768px) {
+//     .navbar-left .menu-icon {
+//       display: block;
+//     }
+
+//     .navbar-right {
+//       position: absolute;
+//       top: 100%;
+//       right: 0;
+//       background-color: #ffffff;
+//       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+//       flex-direction: column;
+//       align-items: flex-start;
+//       width: 100%;
+//       padding: 1rem 2rem;
+//       display: none;
+//     }
+
+//     .navbar-right.open {
+//       display: flex;
+//     }
+//   }
+// }
+
+// src/Styles/Navbar.scss
+
+.dev-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      color: #4f46e5;
+    }
+
+    .menu-icon {
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: none;
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .welcome-text {
+      font-size: 1rem;
+      color: #374151;
+    }
+
+    .profile-icon {
+      font-size: 1.8rem;
+      color: #4f46e5;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navbar-left .menu-icon {
+      display: block;
+    }
+
+    .navbar-right {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: none;
+    }
+
+    .navbar-right.open {
+      display: flex;
+    }
+  }
+}
