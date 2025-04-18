@@ -1,30 +1,3 @@
-// // src/components/Navbar.jsx
-
-// import React, { useState } from 'react';
-// import '../Styles/Navbar.scss';
-// import { FaBars, FaUserCircle } from 'react-icons/fa';
-
-// const Navbar = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   return (
-//     <nav className="dev-navbar">
-//       <div className="navbar-left">
-//         <FaBars className="menu-icon" onClick={() => setMenuOpen(!menuOpen)} />
-//         <h3>DevBoard</h3>
-//       </div>
-
-//       <div className={`navbar-right ${menuOpen ? 'open' : ''}`}>
-//         <span className="welcome-text">👋 Welcome, Developer!</span>
-//         <FaUserCircle className="profile-icon" />
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
 // src/components/Navbar.jsx
 
 import React, { useState } from 'react';
@@ -48,7 +21,7 @@ const Navbar = ({ toggleSidebar }) => {
       </div>
 
       <div className={`navbar-right ${menuOpen ? 'open' : ''}`}>
-        <span className="welcome-text">👋 Welcome, Developer!</span>
+        <span className="welcome-text">👋 Welcome, {}</span>
         <FaUserCircle className="profile-icon" onClick={handleAvatarClick} />
       </div>
     </nav>

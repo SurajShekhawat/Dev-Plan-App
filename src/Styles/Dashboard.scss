@@ -1,111 +1,87 @@
-// .dashboard {
-//   padding: 2rem;
-//   background-color: #f9f9fc;
+
+
+// // src/Styles/Dashboard.scss
+
+// .dashboard-layout {
+//   display: flex;
 //   min-height: 100vh;
-//   // width: 100% !important;
-//   color: #1a202c;
+//   background: #f9f9ff;
 
-//   .welcome-text {
-//     font-size: 2rem;
-//     font-weight: bold;
-//     margin-bottom: 0.5rem;
-//     animation: fadeInDown 1s ease-in-out;
-
-//     .highlight {
-//       color: #4f46e5;
-//     }
+//   .dashboard-main {
+//     flex-grow: 1;
+//     display: flex;
+//     flex-direction: column;
 //   }
 
-//   .subtext {
-//     font-size: 1.1rem;
-//     color: #6b7280;
-//     margin-bottom: 2rem;
-//   }
+//   .dashboard-content {
+//     padding: 2rem;
 
-//   .widget-cards {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//     gap: 1.5rem;
-//     margin-bottom: 2rem;
+//     h1 {
+//       font-size: 2rem;
+//       margin-bottom: 0.5rem;
 
-//     .card {
-//       background-color: #ffffff;
-//       padding: 1.5rem;
-//       border-radius: 12px;
-//       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-//       transition: all 0.3s ease;
-
-//       &:hover {
-//         transform: translateY(-4px);
-//         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-//       }
-
-//       h2 {
-//         font-size: 1.1rem;
-//         margin-bottom: 0.5rem;
-//       }
-
-//       p {
-//         font-size: 1rem;
-//         font-weight: 500;
+//       span {
+//         color: #6366f1;
 //       }
 //     }
-//   }
 
-//   .quick-tools-section {
-//     margin-top: 2rem;
-//     padding: 1.5rem;
-//     background-color: #fff;
-//     border-radius: 12px;
-//     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-//     h2 {
-//       margin-bottom: 1rem;
-//       font-size: 1.3rem;
-//       font-weight: 600;
-//       color: #1a202c;
+//     p {
+//       color: #6b7280;
+//       margin-bottom: 2rem;
 //     }
 
-//     .tools-grid {
+//     .cards {
 //       display: flex;
-//       flex-wrap: wrap;
 //       gap: 1rem;
+//       margin-bottom: 2rem;
 
-//       .tool-button {
-//         flex: 1 1 200px;
-//         padding: 0.8rem 1.2rem;
-//         font-size: 1rem;
-//         border: none;
-//         border-radius: 8px;
-//         background-color: #4f46e5;
-//         color: #fff;
-//         cursor: pointer;
-//         transition: all 0.3s ease;
+//       .card {
+//         background: white;
+//         border-radius: 12px;
+//         padding: 1.5rem;
+//         flex: 1;
+//         box-shadow: 0 0 10px rgba(0,0,0,0.05);
 
-//         &:hover {
-//           background-color: #4338ca;
-//           transform: translateY(-2px) scale(1.02);
-//           box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+//         h3 {
+//           font-size: 1.2rem;
+//           margin-bottom: 0.5rem;
+//         }
+
+//         p {
+//           color: #4b5563;
+//         }
+//       }
+//     }
+
+//     .tools {
+//       h2 {
+//         font-size: 1.4rem;
+//         margin-bottom: 1rem;
+//       }
+
+//       .tool-buttons {
+//         display: flex;
+//         gap: 1rem;
+
+//         button {
+//           background: #4f46e5;
+//           color: white;
+//           padding: 0.75rem 1.5rem;
+//           border: none;
+//           border-radius: 8px;
+//           font-size: 1rem;
+//           cursor: pointer;
+//           transition: 0.2s ease;
+
+//           &:hover {
+//             background: #4338ca;
+//           }
 //         }
 //       }
 //     }
 //   }
 // }
 
-// // Animations
-// @keyframes fadeInDown {
-//   from {
-//     opacity: 0;
-//     transform: translateY(-20px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
-
-
-// src/Styles/Dashboard.scss
 
 .dashboard-layout {
   display: flex;
@@ -137,6 +113,7 @@
 
     .cards {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 2rem;
 
@@ -144,8 +121,9 @@
         background: white;
         border-radius: 12px;
         padding: 1.5rem;
-        flex: 1;
-        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        flex: 1 1 220px;
+        min-width: 220px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 
         h3 {
           font-size: 1.2rem;
@@ -166,6 +144,7 @@
 
       .tool-buttons {
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
 
         button {
@@ -176,7 +155,7 @@
           border-radius: 8px;
           font-size: 1rem;
           cursor: pointer;
-          transition: 0.2s ease;
+          transition: background 0.2s ease;
 
           &:hover {
             background: #4338ca;
@@ -185,4 +164,52 @@
       }
     }
   }
+
+  // Responsive tweaks
+  @media (max-width: 768px) {
+    .dashboard-content {
+      padding: 1.5rem;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .cards {
+        flex-direction: column;
+      }
+
+      .tool-buttons {
+        flex-direction: column;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dashboard-content {
+      padding: 1rem;
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .tools h2 {
+        font-size: 1.2rem;
+      }
+
+      .card h3 {
+        font-size: 1rem;
+      }
+    }
+  }
 }
+
+.card {
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+

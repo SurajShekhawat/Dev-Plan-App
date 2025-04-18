@@ -11,6 +11,9 @@ import ProtectedRoute from "./features/auth/ProtectedRoute";
 
 import ProfileSettings from "./pages/ProfileSetting/ProfileSettings";
 
+import CreateTask from "./pages/CreateTask/CreateTask";
+import CreateProject from "./pages/CreateProject/CreateProject"
+
 function App() {
   return (
     <AuthProvider>
@@ -35,6 +38,16 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/create-task"
+            element={
+              <ProtectedRoute>
+                <CreateTask />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/create-project" element={<CreateProject />} />
+          {/* <Route path="/project-wireframe" element={<ProjectWireframe />} /> */}
         </Routes>
 
         <ToastContainer position="top-right" autoClose={3000} />

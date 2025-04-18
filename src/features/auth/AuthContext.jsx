@@ -7,21 +7,28 @@ import {
   browserLocalPersistence,
 } from "firebase/auth";
 
-const AuthContext = createContext();
+// ✅ Exported AuthContext so it can be imported elsewhere
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setPersistence(auth, browserLocalPersistence);
+    // Set persistence to local so user stays logged in even after page refresh
+    setPersistence(auth, browserLocalPersistence)
+      .then(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          setUser(currentUser);
+          setLoading(false);
+        });
 
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
+        return () => unsubscribe();
+      })
+      .catch((error) => {
+        console.error("Persistence error:", error);
+        setLoading(false);
+      });
   }, []);
 
   const logout = () => signOut(auth);
@@ -33,4 +40,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+// ✅ useAuth hook for cleaner context usage
 export const useAuth = () => useContext(AuthContext);
